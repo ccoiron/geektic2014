@@ -17,12 +17,12 @@ public class UtilisateurDAO {
 	public EntityManager em;
 	
 	public List<Utilisateur> findAllUtilisateur(){
-		 TypedQuery<Utilisateur> query = em.createQuery("SELECT u FROM Utilisateur as u left join fetch u.centreinterets", Utilisateur.class);
+		 TypedQuery<Utilisateur> query = em.createQuery("SELECT DISTINCT u FROM Utilisateur as u left join fetch u.centreinterets", Utilisateur.class);
 		 return query.getResultList();
 	}
 		
 	public List<Utilisateur> findBySex(int sexe) { 
-		TypedQuery<Utilisateur> query = em.createQuery("SELECT u FROM Utilisateur u WHERE sexe =" + sexe,Utilisateur.class); 
+		TypedQuery<Utilisateur> query = em.createQuery("SELECT DISTINCT u FROM Utilisateur u WHERE sexe =" + sexe,Utilisateur.class); 
 		return query.getResultList(); 
 	}
 }
