@@ -20,6 +20,11 @@ public class UtilisateurDAO {
 		 TypedQuery<Utilisateur> query = em.createQuery("SELECT DISTINCT u FROM Utilisateur as u left join fetch u.centreinterets", Utilisateur.class);
 		 return query.getResultList();
 	}
+	
+	public List<Utilisateur> findByCi(int idCentreInteret){
+		TypedQuery<Utilisateur> query = em.createQuery("SELECT u FROM Utilisateur u left join fetch u.centreinterets ci WHERE ci.id = :id", Utilisateur.class); 
+		return query.setParameter("id",idCentreInteret).getResultList(); 
+	}
 		
 	public List<Utilisateur> findBySex(int sexe) { 
 		TypedQuery<Utilisateur> query = em.createQuery("SELECT DISTINCT u FROM Utilisateur u WHERE sexe =" + sexe,Utilisateur.class); 

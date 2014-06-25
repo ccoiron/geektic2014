@@ -7,19 +7,19 @@ app.controller('HelloCtrl', function($scope, $http) {
 });
 
 app.controller('UsersCtrl', function($scope, $http) {
-	$http.get('http://localhost:8080/utilisateur').success(
+	$http.get('/utilisateur').success(
 			function(data, status, headers, config) {
 				$scope.users = data;
 			});
 });
 
 app.controller('rechercheCtrl', function($scope, $http) {
-    $http.get('http://localhost:8080/centreinteret').success(function(data, status, headers, config) {
+    $http.get('/centreinteret').success(function(data) {
         $scope.cis = data;
     });
 });
 
-
+//On route
 app.config([ '$routeProvider', function($routeProvider) {
 	$routeProvider.when('/', {
 		templateUrl : 'vue/accueil.html',
@@ -32,6 +32,5 @@ app.config([ '$routeProvider', function($routeProvider) {
 	}).when('/recherche', {
 	     templateUrl: 'vue/recherche.html',
 	     controller: 'rechercheCtrl'
-	      });;
-
+	      });
 } ]);
