@@ -1,0 +1,21 @@
+<h1>Trouvez le !</h1>
+<div class="row">
+    <div class="col-lg-12">
+        <div ng-controller="rechercheCtrl">
+       
+				<label for="inputEmail3" class="col-sm-2 control-label">Centre interets</label>
+				<div class="col-sm-10">
+					<div ng-repeat="ci in cis" class="radio">
+						<label>
+						<input type="radio" name="pageSet" ng-model="sexe" />{{ci.libelle}}
+						</label>
+					</div>
+				</label>
+				</div>
+				{{sexe}}
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-default">Rechercher</button>
+				</div>
+        </div>
+    </div>
+</div>

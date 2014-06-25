@@ -1,0 +1,13 @@
+	
+<h1>Utilisateur {{user.prenom}} {{user.nom}}</h1>
+ <p>({{user.sexe}})</p>
+<br />
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h3 class="panel-title">Centre d'interets</h3>
+</div>
+<br />
+<ul ng-repeat="interet in user.interets">
+<li>{{interet.libelle}}</li>
+</ul>
+</div>

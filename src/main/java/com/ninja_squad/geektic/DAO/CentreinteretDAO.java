@@ -9,7 +9,6 @@ import javax.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 
 import com.ninja_squad.geektic.domaine.CentreInteret;
-import com.ninja_squad.geektic.domaine.Utilisateur;
 
 @Repository
 public class CentreinteretDAO {
